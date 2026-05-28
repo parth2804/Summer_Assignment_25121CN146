@@ -5,7 +5,7 @@ int main()
 int i,a,b;
 printf("Please Enter the number: ");
 scanf("%d", &a); 
-printf("Mu2ltiplacation Table of %d :\n", a);
+printf("Multiplication Table of %d :\n", a);
 for (i = 1; i <= 10; i++) 
 {
 b=a*i ;
