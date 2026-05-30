@@ -11,7 +11,7 @@ int main()
         printf("Wrong Range");
         return 0;
     }
-    
+
     for (i = a; i <= b; i++) 
     {
         if (i <= 1)
@@ -28,7 +28,8 @@ int main()
             }
         }
 
-        if (isPrime==1)    printf("%d ", i);
+        if (isPrime==1)    
+        printf("%d ", i);
     }
     return 0;
 }
