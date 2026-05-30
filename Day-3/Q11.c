@@ -13,6 +13,5 @@ int main()
     }
 
     printf("GCD = %d", gcd);
-
     return 0;
 }
