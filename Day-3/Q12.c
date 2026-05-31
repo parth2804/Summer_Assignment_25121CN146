@@ -2,17 +2,26 @@
 #include <stdio.h>
 int main() 
 {
-    int a, b, i, gcd = 1, lcm;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    for (i = 1; i <= a && i <= b; i++) 
+    int a, b, temp, x, y, gcd, lcm;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    x = a;
+    y = b;
+    // GCD 
+    while (b != 0) 
     {
-        if (a % i == 0 && b % i == 0)
-            gcd = i;
+        temp = b;
+        b = a % b;
+        a = temp;
     }
-
-    lcm = (a * b) / gcd;
-    printf("LCM = %d", lcm);
+    gcd = a;
+    // LCM 
+    if (x == 0 || y == 0)
+        lcm = 0;
+    else
+        lcm = (x * y) / gcd;
+    printf("LCM is: %d\n", lcm);
     return 0;
 }
