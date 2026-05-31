@@ -2,16 +2,17 @@
 #include <stdio.h>
 int main() 
 {
-    int a, b, i, gcd;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    for (i = 1; i <= a && i <= b; i++) 
+    int a, b;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    while (b != 0)
     {
-        if (a % i == 0 && b % i == 0)
-            gcd = i;
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-
-    printf("GCD = %d", gcd);
+    printf("GCD is: %d\n", a);
     return 0;
 }
