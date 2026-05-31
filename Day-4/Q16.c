@@ -1,58 +1,30 @@
-// Check for Armstrong numbers in a given range
+// Find Armstrong numbers in a given range
 #include <stdio.h>
-int main()
+int main() 
 {
-    int start, end, num;
-    printf("Enter start and end of range: ");
-    scanf("%d%d", &start, &end);
-    
-    if (start > end)
+    int beg, end;
+    printf("Enter range (beg end): ");
+    scanf("%d %d", &beg, &end);
+
+    printf("Armstrong numbers between %d and %d:\n", beg, end);
+
+    for (int i = beg; i <= end; i++) 
     {
-        printf("Invalid range!");
-        return 0;
-    }
-    
-    printf("Armstrong numbers are:\n");
-    for (num = start; num <= end; num++)
-    {
-        int original = num, temp, remainder, n = 0, result = 0;
-
-        if (num == 0)
+        int temp, digits = 0, result = 0;
+        for (temp = i; temp != 0; temp /= 10) 
         {
-            n = 1;
-            result = 0;
+            digits++;
         }
-        else
+        for (temp = i; temp != 0; temp /= 10) 
         {
-            temp = num;
-
-            while (temp != 0)
+            int rem = temp % 10, p = 1;
+            for (int j = 0; j < digits; j++) 
             {
-                n++;
-                temp /= 10;
+                p *= rem;
             }
-
-            temp = num;
-
-            while (temp != 0)
-            {
-                remainder = temp % 10;
-
-                int power = 1;
-                int i = 1;
-
-                while (i <= n)
-                {
-                    power *= remainder;
-                    i++;
-                }
-
-                result += power;
-                temp /= 10;
-            }
+            result += p;
         }
-        if (result == original)
-            {printf("%d ", num);}
+        if (result == i) printf("%d\n", i);
     }
     return 0;
 }
