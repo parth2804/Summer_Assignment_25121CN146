@@ -1,9 +1,9 @@
 // fibonacci series printing using recursion
 #include <stdio.h>
-int fibonacci(int n) 
+int fib(int n) 
 {
     if (n > 1)  
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        return fib(n - 1) + fib(n - 2);
     else
         return n;
 }
@@ -15,6 +15,6 @@ int main()
     scanf("%d", &n);
     printf("Fibonacci series up to %d term:\n ", n);
     for (int i = 0; i < n; i++)
-        printf("%d ", fibonacci(i));
+        printf("%d ", fib(i));
     return 0;
 }

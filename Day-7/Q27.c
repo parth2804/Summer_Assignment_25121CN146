@@ -1,11 +1,11 @@
 //sum of digits using recursion
 #include <stdio.h>
-int sumDigits(int n) 
+int sd(int n) 
 {
     if (n == 0)
         return 0;
     else
-        return (n % 10) + sumDigits(n / 10);
+        return (n % 10) + sd(n / 10);
 }
 
 int main() 
@@ -13,6 +13,6 @@ int main()
     int n;
     printf("Enter a number: ");
     scanf("%d", &n);
-    printf("Sum of digits of %d = %d\n", n, sumDigits(n));
+    printf("Sum of digits of %d = %d\n", n, sd(n));
     return 0;
 }
