@@ -15,7 +15,7 @@ int main()
     printf("Enter a number: ");
     scanf("%d", &n);
     if (n <= 0)
-        printf("Please enter a positive number");
+        printf("Please enter a natural number");
     else 
     {
         printf("Reversed: ");
