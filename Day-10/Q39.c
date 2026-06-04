@@ -1,5 +1,5 @@
 //Write a program to Print number pyramid.
-//  1
+//    1
 //   121
 //  12321
 // 1234321
