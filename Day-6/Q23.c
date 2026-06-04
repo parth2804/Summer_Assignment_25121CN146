@@ -7,7 +7,7 @@ int main()
     scanf("%d", &n);
     while (n > 0) 
     {
-        count += n & 1;  
+        count += n & 1;  //bitwise &
         n >>= 1;         
         }
     printf("Set bits: %d\n", count);
