@@ -1,4 +1,4 @@
-// Find factorial using a function
+// function to find factorial
 #include <stdio.h>
 
 void factorial(int n)
