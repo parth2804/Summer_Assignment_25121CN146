@@ -1,4 +1,4 @@
-// move zeros to end in an 1darray
+// move zeros to end in an 1d array
 #include <stdio.h>
 int main()
 {
