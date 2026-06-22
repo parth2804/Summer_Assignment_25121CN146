@@ -1,48 +1,48 @@
+//find longest word 
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
     char str[200];
-    char longest[50];
-    int start = 0, maxLen = 0;
+    char word[50];
+    int start = 0, max = 0;
 
     printf("Enter a sentence: ");
     fgets(str, sizeof(str), stdin);
 
-    int wordStart = 0;
-    int wordLen = 0;
+    int wstart = 0;
+    int len = 0;
 
     for (int i = 0; str[i] != '\0'; i++)
     {
         if (str[i] != ' ' && str[i] != '\n')
         {
-            wordLen++;
+            len++;
         }
         else
         {
-            if (wordLen > maxLen)
+            if (len > max)
             {
-                maxLen = wordLen;
-                start = wordStart;
+                max = len;
+                start = wstart;
             }
 
-            wordStart = i + 1;
-            wordLen = 0;
+            wstart = i + 1;
+            len = 0;
         }
     }
-
-    // Handle last word if string doesn't end with space
-    if (wordLen > maxLen)
+    //last check
+    if (len > max)
     {
-        maxLen = wordLen;
-        start = wordStart;
+        max = len;
+        start = wstart;
     }
 
-    strncpy(longest, str + start, maxLen);
-    longest[maxLen] = '\0';
+    strncpy(word, str + start, max);
+    word[max] = '\0';
 
-    printf("Longest word: %s\n", longest);
+    printf("Longest word: %s", word);
 
     return 0;
 }

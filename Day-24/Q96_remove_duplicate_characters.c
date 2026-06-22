@@ -1,32 +1,35 @@
+// remove duplicate char
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-    char str[100];
+    char str[100], newstr[100];
+    int k = 0;
 
-    printf("Enter a string: ");
+    printf("Enter a sentence: ");
     fgets(str, sizeof(str), stdin);
 
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for (int j = i + 1; str[j] != '\0'; )
+        int found = 0;
+
+        for (int j = 0; j < i; j++)
         {
             if (str[i] == str[j])
             {
-                for (int k = j; str[k] != '\0'; k++)
-                {
-                    str[k] = str[k + 1];
-                }
-            }
-            else
-            {
-                j++;
+                found = 1;
+                break;
             }
         }
+
+        if (found == 0)
+        {
+            newstr[k] = str[i];
+            k++;
+        }
     }
-
-    printf("After removing duplicates: %s", str);
-
+    newstr[k] = '\0';
+    printf("After removing duplicates: %s", newstr);
     return 0;
 }
